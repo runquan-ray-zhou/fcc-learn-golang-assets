@@ -2,10 +2,15 @@ package main
 
 import (
 	"fmt"
+	"strings"
 )
 
-func removeProfanity(message *string) {
-	// ?
+func removeProfanity(message *string) { // pass in a pointer
+	messageVal := *message                                       // dereference the pointer to get value
+	messageVal = strings.ReplaceAll(messageVal, "dang", "****")  // change value
+	messageVal = strings.ReplaceAll(messageVal, "shoot", "****") // change value
+	messageVal = strings.ReplaceAll(messageVal, "heck", "****")  // change value
+	*message = messageVal                                        // dereference the pointer to get value and set value to new message value
 }
 
 // don't touch below this line
